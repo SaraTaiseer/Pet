@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Detail{% endblock %}
+
+{% block content %}
+
+
+    <h1>{{pets.name}}</h1>
+    <p>{{pets.age}}</p>
+    <p>{{pets.available}}</p>
+{% if pets.image %}
+    <img src="{{pets.image.url}}" alt="image">
+	{% endif %}
+
+    <p>{{pets.price}}</p>
+
+    <a href="{% url 'pet-update' pets.id %}">
+        <button type="button"name="button">Update</button>
+      </a>
+      <br>
+      <a href="{% url 'pet-delete' pets.id %}">
+          <button type="button"name="button">Delete</button>
+          </a>
+{% endblock %}

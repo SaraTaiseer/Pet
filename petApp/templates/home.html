@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Pet shop{% endblock %}
+
+{% block content %}
+
+
+
+    <h1>Test</h1>
+  <!--  <h2>{{available_pets}}</h2>-->
+    <br>
+    {% for pet in available_pets %}
+
+                  <ul>
+                      <li><a href="{% url 'pet-detail' pet.id %}" >{{pet.name}}</a></li>
+                  </ul>
+
+          {% endfor %}
+{% endblock %}
